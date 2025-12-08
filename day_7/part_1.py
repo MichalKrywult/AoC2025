@@ -11,7 +11,6 @@ with open("data/data7.txt") as f:
         if k=="S":
             start=i
     split_count=0
-    max_width=len(lines[0])
     active={start}
     for i in range(1,len(lines)):
         new=set()
@@ -21,7 +20,7 @@ with open("data/data7.txt") as f:
                 new.add(j)
             if symbol=="^":
                 split_count+=1
-                if j+1<max_width:
+                if j+1<len(lines[0]):
                     new.add(j+1)
                 if j-1>-1:
                     new.add(j-1)
